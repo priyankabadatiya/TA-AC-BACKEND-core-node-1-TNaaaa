@@ -1,32 +1,14 @@
-const path = require("path");
+var {readFile, readFileSync} = require('fs');
 
-filepath = path.join(__dirname, "index.md");
-
-const fs = require("fs");
-
-fs.readFile(filepath, (err, file) => {
-  console.log(file);
-  console.log(file.toString());
+readFile('./content.md', 'utf8', (err, content)=>{
+    console.log(comtent);
 });
 
-console.log("Execute me first");
+var result = readFileSync('./content.md', 'utf8');
 
-console.time("file1");
-
-for (let i = 0; i < 100; i++) {}
-
-console.timeEnd("file1");
-
-console.log("execute me last");
-
-console.time("file1");
-setTimeout(() => {
-  console.log("time executed");
-  console.timeEnd("file1");
-}, 1000);
+console.log(result);
 
 var buff1 = Buffer.alloc(10);
 
-buff1.write("Welcome to Node.js");
-
-console.log(buff1.toString());
+buff1.write('Welcome to node.js');
+console.log(buff1);
