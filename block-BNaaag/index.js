@@ -13,7 +13,7 @@ console.log("Execute me first");
 
 console.time("file1");
 
-for (let i = 0; i < 1000000; i++) {}
+for (let i = 0; i < 100; i++) {}
 
 console.timeEnd("file1");
 
