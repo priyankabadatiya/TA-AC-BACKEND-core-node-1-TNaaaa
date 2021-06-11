@@ -1,8 +1,11 @@
+const { createSecretKey } = require("crypto");
 const http = require("http");
+var server = http.createServer(handleRequest);
 
-http
-  .createServer((request, respone) => {
-    console.log(request, respone);
-    respone.end("welcome to Node js");
-  })
-  .listen(4000, "localhost");
+function handleRequest(req, res){
+    res.end('Welcome')
+}
+
+server.listen(4000,()=>{
+    console.log(`server is listening on port 4k`)
+})
