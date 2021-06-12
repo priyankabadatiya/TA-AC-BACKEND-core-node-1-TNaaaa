@@ -43,7 +43,7 @@ server.listen(7000, ()=>{
 
 //.............................................................
 
-var server2 = http.createServer(handleRequest5)
+var server2 = http.createServer(handleRequest)
 function handleRequest(req,res){
     res.statusCode = 202
 }
@@ -94,6 +94,23 @@ function handleRequest(req, res) {
   }
 }
 
-server.listen(2345, () => {
+server4.listen(2345, () => {
   console.log("server listening on port of 2345");
+});
+
+//.....................................................................
+
+var url = require('url')
+var PORT = 2345;
+var server5 = http.createServer(handleRequest);
+
+function handleRequest(req, res){
+    var parsedUrl = url.parse(req.url, true);
+    console.log(parsedUrl.pathname, req.url);
+    res.setHeader('content-Type', 'application /json')
+    res.end(JSON.stringify(parsedUrl.query))
+}
+
+server5.listen(PORT,()=>{
+    console.log('server listening on port '+ PORT)
 });
