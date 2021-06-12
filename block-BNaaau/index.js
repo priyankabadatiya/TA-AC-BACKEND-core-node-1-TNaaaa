@@ -74,7 +74,7 @@ function handleRequest7(req,res){
 }
 http3.listen(5050, ()=>{
     console.log('server listening to port 5050')
-})
+});
 
 //...............................................................
 
