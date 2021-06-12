@@ -1,0 +1,103 @@
+:root {
+    --primary: #f39fae;
+    --dark: #01010c;
+    --dark-blue: #1c2140;
+    --primary-color: #010712;
+    --secondary-color: #818386;
+    --bg-color: #FCFDFD;
+    --button-color: #3B3636;
+    --h1-color: #3F444C;
+}
+
+[data-theme="dark"] {
+    --primary: #010712;
+    --dark: #FCFDFD;
+    --dark-blue: #FCFDFD;
+    --primary-color: #FCFDFD;
+    --secondary-color: #818386;
+    --bg-color: #010712;
+    --button-color: #818386;
+    --h1-color: #FCFDFD;
+}
+
+$white: #ffffff;
+$black: #242424;
+$gray: #ededed;
+$gray-b: #F8F8F8;
+$green: #B4C8C6;
+$blue: #8edbed;
+$gap: 20px;
+$gap-v: 35px;
+$gap-h: 50px;
+$transition: .3s ease;
+$mq1: 770px;
+$mq2: 1024px;
+$mq3: 1200px;
+$mq4: 1400px;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+}
+
+body,
+input,
+button {
+    font-family: "Poppins";
+}
+
+body {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--dark);
+    transition: color 0.5s ease;
+}
+
+a:hover {
+    color: var(--dark-blue);
+}
+
+.container {
+    max-width: 85%;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar {
+    transform: rotateZ(0deg);
+    -webkit-transform: rotateZ( 0deg);
+    top: 0;
+    font-size: 1.4rem;
+    font-family: 'Dancing Script', cursive;
+    position: fixed;
+}
+
+.hero_section {
+    margin-top: 40px;
+}
+
+@media (min-width: 48em) {
+    .sidebar {
+        transform: rotateZ(270deg);
+        position: fixed;
+        left: -5rem;
+        top: 45%;
+        height: 1rem;
+        font-size: 1.4rem;
+        font-family: 'Dancing Script', cursive;
+    }
+}
