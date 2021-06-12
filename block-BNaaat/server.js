@@ -1,17 +1,21 @@
-const fs  = require("fs");
 var http = require("http");
+var fs  = require("fs");
+
 
 var server = http.createServer(handleRequest);
 
 function handleRequest(req, res) {
-  if (req.method === "GET" && req.url === "/") {
-    res.setHeader("Content-Type", "text/plain");
-    res.write("Welcome to homepage");
-    res.end();
-  } else if (req.method === "GET" && req.url === "/about") {
-    res.setHeader("Content-Type", "text/html");
+  if (req.method === "GET" && req.url === "/file") {
+      fs.readFile('./node.html', (err, content)=>{
+if(err)console.log(err);
+res.setHeader('content-type', 'text/html');
+res.end(content);
+      })
+  }
 
-    fs.createReadStream("./about.html").pipe(res);
+  if(req.method === "GET" && req.url === "/stream"){
+      res.setHeader('content-type', 'text/html');
+      fs.createReadStream('./node.html').pipe(res);
   }
 }
 
